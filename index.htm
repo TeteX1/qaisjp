@@ -9,7 +9,23 @@
 </head>
 
 <body>
-	<h1></h1>
+	<h1>What is qaisjp?</h1>
+	<h2>Click to find out</h2>
+	<button type"button" onclick="findOutFunction()">Find out</button>
+	<p id="description"></p>
+
+	<script>
+		function findOutFunction () {
+			document.getElementById("description").innerHTML = "Gay af";
+
+			var qaisjp = document.createElement("IMG");
+			qaisjp.setAttribute("src", "qaisjp.jpg");
+  			qaisjp.setAttribute("width", "304");
+  			qaisjp.setAttribute("height", "228");
+  			qaisjp.setAttribute("alt", "fix yo browser smh");
+  			document.body.appendChild(qaisjp);
+  		}
+	</script>
 </body>
 
 </html>
