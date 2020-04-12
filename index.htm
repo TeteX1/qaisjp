@@ -13,18 +13,32 @@
 	<h2>Click to find out</h2>
 	<button type = "button" onclick="findOutFunction()">Find out</button>
 	<p id="description"></p>
+	<p id="lmao"></p>
 
 	<script>
-		function findOutFunction () {
-			document.getElementById("description").innerHTML = "Gay af";
+		var clickCount = 0;
 
-			var qaisjp = document.createElement("IMG");
-			qaisjp.setAttribute("src", "qaisjp.jpg");
-  			qaisjp.setAttribute("width", "304");
-  			qaisjp.setAttribute("height", "228");
-  			qaisjp.setAttribute("alt", "fix yo browser smh");
-  			document.body.appendChild(qaisjp);
-  		}
+		function findOutFunction () {
+			if (clickCount <= 10) {
+				document.getElementById("description").innerHTML = "Gay af";
+
+				if (!document.getElementById("qaisjppic")) {
+					var qaisjp = document.createElement("IMG");
+					qaisjp.setAttribute("id", "qaisjppic");
+					qaisjp.setAttribute("src", "qaisjp.jpg");
+		  			qaisjp.setAttribute("width", "304");
+		  			qaisjp.setAttribute("height", "228");
+		  			qaisjp.setAttribute("alt", "fix yo browser smh");
+		  			document.body.appendChild(qaisjp);
+		  		}
+
+		  		clickCount++;
+	  		} else {
+	  			document.getElementById("qaisjppic").setAttribute("src", "qaisjpmad.png");
+	  			document.getElementById("description").innerHTML = "bruh that's enough, stop spamming smh";
+	  			console.log("nigga")
+	  		}
+	  	}
 	</script>
 </body>
 
