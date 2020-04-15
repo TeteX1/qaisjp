@@ -3,19 +3,42 @@
 <html lang="en">
 
 <head>
-	<title>This is a test HTML.</title>
+	<title>The truth about qaisjp</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="This is my first web page.">
+	<meta name="description" content="Not much to see here">
+
+	<style>
+		h1, h2, p {
+			color: rgb(60,60,60);
+		}
+
+		body {background-color: lightblue;}
+
+		#findOutBtn {
+			padding: 5px 10px;
+			width: auto;
+			height: auto;
+		}
+	</style>
 </head>
 
 <body>
 	<h1>What is qaisjp?</h1>
 	<h2>Click to find out</h2>
-	<button type = "button" onclick="findOutFunction()">Find out</button>
+	<button id = "findOutBtn" type = "button" onclick="findOutFunction()">Find out</button>
 	<p id="description"></p>
-	<p id="lmao"></p>
 
 	<script>
+		document.getElementById("findOutBtn").style.padding = "5px 10px";
+
+		function increaseSize (element) {
+			var width = element.offsetWidth;
+			var height = element.offsetHeight;
+
+			element.style.width = (width+3).toString() + "px";
+			element.style.height = (height+3).toString() + "px";
+		}
+
 		var clickCount = 0;
 
 		function findOutFunction () {
@@ -32,10 +55,13 @@
 		  		}
 
 		  		clickCount++;
+		  		increaseSize (document.getElementById("findOutBtn"));
+
 	  		} else {
+	  			document.getElementById("findOutBtn").disabled = true;
+	  			document.getElementById("findOutBtn").style.color = "red";
 	  			document.getElementById("qaisjppic").setAttribute("src", "qaisjpmad.png");
 	  			document.getElementById("description").innerHTML = "bruh that's enough, stop spamming smh";
-	  			console.log("nigga")
 	  		}
 	  	}
 	</script>
